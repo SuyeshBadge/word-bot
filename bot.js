@@ -5,7 +5,7 @@ const dotenv = require('dotenv').config();
 const { MongoClient } = require('mongodb');
 
 // Replace with your MongoDB connection string
-const mongoURI = 'mongodb://localhost:27017'; // Example URI, update as needed
+const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017'; // Example URI, update as needed
 const dbName = 'telegram_bot_db'; // Name of the database
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '';
