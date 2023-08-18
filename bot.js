@@ -34,6 +34,7 @@ const bot = new TelegramBot(TELEGRAM_BOT_TOKEN, {
 
 bot.onText(/\/getwordmeaning/, async (msg) => {
   const chatId = msg.chat.id;
+  fetchAndSaveWords();
 
   try {
     const word = await fetchUnusedWord();
@@ -57,6 +58,7 @@ bot.onText(/\/getwordmeaning/, async (msg) => {
 
         const message = `Here's your daily word:\nWord: ${word}\nMeanings:\n${formattedMeanings}`;
         const data = await bot.sendMessage(chatId, message);
+        console.log("🚀 ~ file: bot.js:60 ~ bot.onText ~ data:", data)
       }
     }
   } catch (error) {
