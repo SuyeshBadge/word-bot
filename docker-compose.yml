@@ -1,0 +1,20 @@
+version: '3'
+services:
+  bot:
+    build: .
+    image: word-bot-image
+    container_name: word-bot-container
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/botdb
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongodb-data:/data/db
+
+volumes:
+  mongodb-data:
