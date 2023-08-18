@@ -4,7 +4,7 @@
   "description": "Telegram bot to fetch words and their meanings",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node bot.js"
   },
   "author": "Your Name",
   "license": "MIT",
