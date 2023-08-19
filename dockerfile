@@ -13,8 +13,6 @@ RUN npm install
 # Copy the rest of your application code to the working directory
 COPY . .
 
-# Expose the port that your bot is listening on (if applicable)
-EXPOSE 3000
 
 # Command to run your bot when the container starts
 CMD ["node", "bot.js"]
